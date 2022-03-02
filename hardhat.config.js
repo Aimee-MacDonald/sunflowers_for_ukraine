@@ -23,10 +23,10 @@ module.exports = {
     }
   },
   paths: {
-    sources: './contracts',
-    cache: './cache',
-    artifacts: './artifacts',
-    tests: './test'
+    sources: './src/blockchain/contracts',
+    cache: './src/blockchain/cache',
+    artifacts: './src/frontend/artifacts',
+    tests: './tests/blockchain'
   },
   defaultNetwork: "hardhat",
   networks: {

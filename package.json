@@ -2,18 +2,40 @@
   "name": "sunflowers_for_ukraine",
   "version": "0.0.1",
   "description": "Sunflowers for Ukraine",
-  "main": "main.js",
+  "main": "src/backend/server.js",
   "repository": "https://github.com/Aimee-MacDonald/sunflowers_for_ukraine.git",
   "author": "Aimee MacDonald <aimeelmacdonald@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node src/backend/server.js",
+    "compile_frontend": "webpack --config webpack.config.js --watch"
+  },
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@nomiclabs/hardhat-waffle": "^2.0.2",
     "@openzeppelin/contracts": "^4.5.0",
+    "babel-loader": "^8.2.3",
     "chai": "^4.3.6",
-    "dotenv": "^16.0.0",
+    "css-loader": "^6.6.0",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.5.4",
-    "hardhat": "^2.8.4"
+    "hardhat": "^2.8.4",
+    "mini-css-extract-plugin": "^2.5.3",
+    "normalize.css": "^8.0.1",
+    "postcss-loader": "^6.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "pug": "^3.0.2"
   }
 }
