@@ -4,7 +4,7 @@ import { ethers } from 'ethers'
 
 export default class SFUInterface extends BaseInterface {
   constructor() {
-    super('0x17B429c89DAeDa0E98F1AB3BbEb3D9E9ef550d8f', SFU.abi)
+    super('0x146fd2459C927301873e72D54FcA6FdD17263A26', SFU.abi)
   }
 
   mint(address) {
@@ -13,6 +13,13 @@ export default class SFUInterface extends BaseInterface {
           
       return super.getContract(true)
         .then(contract => contract.mint(address, {value: ethers.utils.parseEther(`${value}`)}))
+    }
+  }
+
+  totalSupply() {
+    if(super.ethCheck) {
+      return super.getContract()
+        .then(contract => contract.totalSupply())
     }
   }
 }

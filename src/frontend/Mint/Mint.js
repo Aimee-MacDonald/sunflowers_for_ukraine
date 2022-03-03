@@ -12,16 +12,29 @@ const Mint = () => {
 
     sfu.mint(address)
       .then(transaction => transaction.wait())
-      .then(result => console.log(result.events[0].event))
+      .then(result => console.log(result.events))
+      .catch(error => console.log(error))
+  }
+
+  const totalSupply = () => {
+    sfu.totalSupply()
+      .then(result => console.log(result))
       .catch(error => console.log(error))
   }
 
   return (
-    <form onSubmit={mint} id='Mint'>
-      <p>Mint: </p>
-      <input id='address' placeholder='address' />
-      <button type='submit'>Mint</button>
-    </form>
+    <div>
+      <form onSubmit={mint} id='Mint'>
+        <p>Mint: </p>
+        <input id='address' placeholder='address' />
+        <button type='submit'>Mint</button>
+      </form>
+
+      <div>
+        <p>totalSupply: </p>
+        <button onClick={totalSupply}>Check</button>
+      </div>
+    </div>
   )
 }
 

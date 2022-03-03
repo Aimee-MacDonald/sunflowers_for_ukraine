@@ -8,11 +8,6 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
 })
 
 module.exports = {
-  solidity: "0.8.12",
-}
-
-
-module.exports = {
   solidity: {
     version: "0.8.12",
     settings: {
@@ -33,7 +28,7 @@ module.exports = {
     hardhat: {
       chainId: 1337
     },
-    testnet: {
+    mainnet: {
       url: process.env.RPC_URL,
       accounts: [process.env.PRIVATE_KEY]
     }

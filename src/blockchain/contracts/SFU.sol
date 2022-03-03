@@ -11,14 +11,18 @@ contract SFU is ERC721Enumerable {
   uint256 public mintingPrice = 35000000000000000; //  0.035 eth
   address payable public donationAddress = payable(0x165CD37b4C644C2921454429E7F9358d18A45e14);
 
-  constructor() ERC721("AAAA", "AAAA") {}
+  event SlavaUkraini(address recipient);
+
+  constructor() ERC721("Sunflowers for Ukraine", "SFU") {}
 
   function mint(address recipient) external payable {
     require(msg.value >= mintingPrice, "SFU: Requires 0.035 ETH");
-    donationAddress.transfer(address(this).balance);
 
     _safeMint(recipient, _tokenIdTracker.current());
     _tokenIdTracker.increment();
+
+    donationAddress.transfer(address(this).balance);
+    emit SlavaUkraini(recipient);
   }
 
   function tokenURI(uint256 tokenId) public pure override(ERC721) returns (string memory) {

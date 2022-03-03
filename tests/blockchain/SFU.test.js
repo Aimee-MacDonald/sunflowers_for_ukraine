@@ -17,7 +17,15 @@ describe('Sunflowers for Ukraine', () => {
     
     expect(await sfu.balanceOf(signers[0].address)).to.equal(1)
   })
-  
+
+  it('Should returned the total minted', async () => {
+    expect(await sfu.totalSupply()).to.equal(0)
+    
+    await sfu.mint(signers[0].address, {value: ethers.utils.parseEther('0.035')})
+    
+    expect(await sfu.totalSupply()).to.equal(1)
+  })
+
   it('Should cost 0.035 ETH to mint', async () => {
     expect(sfu.mint(signers[0].address)).to.be.revertedWith('SFU: Requires 0.035 ETH')
   })
