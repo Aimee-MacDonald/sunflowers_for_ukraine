@@ -1,6 +1,7 @@
 import React from 'react'
 
 import SFU from '../contractInterfaces/SFUInterface'
+import './Mint.sass'
 
 const Mint = () => {
   const sfu = new SFU()
@@ -16,25 +17,12 @@ const Mint = () => {
       .catch(error => console.log(error))
   }
 
-  const totalSupply = () => {
-    sfu.totalSupply()
-      .then(result => console.log(result))
-      .catch(error => console.log(error))
-  }
-
   return (
-    <div>
-      <form onSubmit={mint} id='Mint'>
-        <p>Mint: </p>
-        <input id='address' placeholder='address' />
-        <button type='submit'>Mint</button>
-      </form>
-
-      <div>
-        <p>totalSupply: </p>
-        <button onClick={totalSupply}>Check</button>
-      </div>
-    </div>
+    <form onSubmit={mint} id='Mint'>
+      <p>Mint: </p>
+      <input id='address' placeholder='address' />
+      <button type='submit'>Mint</button>
+    </form>
   )
 }
 

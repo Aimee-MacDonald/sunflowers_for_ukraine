@@ -1,6 +1,6 @@
 {
   "name": "sunflowers_for_ukraine",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Sunflowers for Ukraine",
   "main": "src/backend/server.js",
   "repository": "https://github.com/Aimee-MacDonald/sunflowers_for_ukraine.git",
@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node src/backend/server.js",
-    "compile_frontend": "webpack --config webpack.config.js --watch"
+    "compile_frontend": "webpack --config webpack.config.js --watch",
+    "heroku-postbuild": "npx hardhat compile && webpack --config webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
