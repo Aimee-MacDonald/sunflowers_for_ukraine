@@ -5,21 +5,14 @@ import 'normalize.css'
 import './main.sass'
 
 import Mint from './Mint/Mint'
-import SFU from './contractInterfaces/SFUInterface'
 
 const Main = () => {
-  const sfu = new SFU()
-  const [ sunflowerCount, setSunflowerCount ] = useState(0)
-
-  useEffect(() => {
-    sfu.totalSupply()
-      .then(result => setSunflowerCount(result))
-      .catch(error => console.log(error))
-  }, [])
-
   return (
     <div id='Main'>
-      <h1>{`${sunflowerCount} Sunflowers minted for Ukraine`}</h1>
+      <div id='heading'>
+        <h1>Mint a Sunflower NFT</h1>
+        <h2>Donations go directly to support Ukraine</h2>
+      </div>
       <Mint/>
     </div>
   )

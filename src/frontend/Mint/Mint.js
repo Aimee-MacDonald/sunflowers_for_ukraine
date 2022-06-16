@@ -19,8 +19,8 @@ const Mint = () => {
 
   return (
     <form onSubmit={mint} id='Mint'>
-      <p>Mint: </p>
-      <input id='address' placeholder='address' />
+      <p>Mint for 0.035 ETH: </p>
+      <input id='address' placeholder='Recipient Address' />
       <button type='submit'>Mint</button>
     </form>
   )
